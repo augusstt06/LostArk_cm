@@ -1,11 +1,13 @@
 import React from "react";
+import Header from "../component/header";
+import Input from "../component/input";
+import styles from "../css/main.module.css";
 
 function Main() {
   return (
-    <div>
-      <div className="header">
-        <h2>Dukii</h2>
-      </div>
+    <div className={styles.main}>
+      <Header />
+      <Input />
     </div>
   );
 }

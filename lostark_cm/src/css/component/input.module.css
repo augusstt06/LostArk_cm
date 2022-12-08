@@ -1,0 +1,7 @@
+.input {
+  text-align: center;
+  width: 60%;
+}
+.input button:hover {
+  background-color: rgba(128, 178, 237, 0.911);
+}
