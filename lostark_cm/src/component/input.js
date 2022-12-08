@@ -15,7 +15,7 @@ function Input() {
   const clickBtn = () => {
     nevigate(`/character/${input.userId}`, {
       state: {
-        userid: input,
+        id: input,
       },
     });
   };

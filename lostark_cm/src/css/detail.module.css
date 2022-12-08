@@ -1,0 +1,17 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* background-color: blue; */
+  height: 100%;
+}
+.detailHeader {
+  display: flex;
+  flex-direction: column;
+  /* background: violet; */
+  align-items: center;
+  text-align: center;
+}
+.detailBody {
+  background-color: rgb(19, 9, 63);
+}
