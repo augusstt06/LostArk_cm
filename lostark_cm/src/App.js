@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/character:id" element={<Detail />} />
+        <Route path="/character/:userid" element={<Detail />} />
       </Routes>
     </div>
   );
