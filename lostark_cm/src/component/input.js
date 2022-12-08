@@ -19,21 +19,27 @@ function Input() {
       },
     });
   };
+  const clickEnter = (e) => {
+    if (e.key === "Enter") {
+      clickBtn();
+    }
+  };
   return (
     <div className={styles.input}>
-      <div class="input-group mb-3">
+      <div className="input-group mb-3">
         <input
           type="text"
           name="userId"
-          class="form-control"
+          className="form-control"
           placeholder="Enter ID"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
           style={{ padding: "10px" }}
           onChange={typingUserId}
+          onKeyPress={clickEnter}
         />
         <button
-          class="btn btn-outline-secondary"
+          className="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
           onClick={clickBtn}
