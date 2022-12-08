@@ -1,0 +1,13 @@
+@font-face {
+  font-family: pageFont;
+  src: url("./asset/KOTRA\ HOPE.ttf");
+}
+
+.App {
+  font-family: pageFont;
+  background: black;
+  padding: 0;
+  margin: 0;
+  /* width: 100vh; */
+  height: 100vh;
+}
