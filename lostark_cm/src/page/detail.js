@@ -4,6 +4,7 @@ import Input from "../component/input";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { customAxios } from "../api/customAxios";
 
 function Detail() {
   let location = useLocation();
@@ -11,28 +12,10 @@ function Detail() {
   const userId = location.state.id.userId;
   console.log(userId);
 
-  const getCharacter = async () => {
-    try {
-      const res = await axios.get(encodeURI(`/characters/${userId}/siblings`), {
-        headers: {
-          authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
-        },
-      });
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const getCharacter_Armor = async () => {
     try {
-      const res = await axios.get(
-        encodeURI(`/armories/characters/${userId}/profiles`),
-        {
-          headers: {
-            authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
-          },
-        }
+      const res = await customAxios.get(
+        encodeURI(`/armories/characters/${userId}/profiles`)
       );
       console.log(res.data);
     } catch (err) {
@@ -40,9 +23,9 @@ function Detail() {
     }
   };
   useEffect(() => {
-    // getCharacter();
     getCharacter_Armor();
-  }, []);
+  }, [userId]);
+
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
