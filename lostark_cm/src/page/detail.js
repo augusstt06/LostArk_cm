@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/header";
 import Input from "../component/input";
 import styles from "../css/detail.module.css";
@@ -24,15 +24,32 @@ function Detail() {
     }
   };
 
+  const getCharacter_Armor = async () => {
+    try {
+      const res = await axios.get(
+        encodeURI(`/armories/characters/${userId}/profiles`),
+        {
+          headers: {
+            authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+          },
+        }
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    // getCharacter();
+    getCharacter_Armor();
+  }, []);
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
         <Header />
         <Input />
       </div>
-      <div className={styles.detailBody}>
-        <button onClick={getCharacter}>Test</button>
-      </div>
+      <div className={styles.detailBody}>ㅇ</div>
     </div>
   );
 }
