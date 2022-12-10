@@ -22,6 +22,7 @@ function Detail() {
       console.log(err);
     }
   };
+
   const getCharacter_Armor = async () => {
     try {
       const res = await customAxios.get(
@@ -33,13 +34,12 @@ function Detail() {
       console.log(err);
     }
   };
-  console.log(info, "info");
-  const test = info[0]["Icon"];
-  console.log(test);
+
   useEffect(() => {
     getCharacter_Profile();
     getCharacter_Armor();
   }, [userId]);
+  console.log(info);
 
   return (
     <div className={styles.detail}>
@@ -68,9 +68,20 @@ function Detail() {
         </div>
         <div>
           <div>
-            <div>
-              <img src={test} />
-            </div>
+            {info &&
+              info.map((data) =>
+                data["Type"] === "무기" ||
+                data["Type"] === "투구" ||
+                data["Type"] === "상의" ||
+                data["Type"] === "하의" ||
+                data["Type"] === "장갑" ||
+                data["Type"] === "견갑" ? (
+                  <div>
+                    <img src={data["Icon"]} alt={data["Name"]} />
+                    {data["Name"]}
+                  </div>
+                ) : null
+              )}
           </div>
         </div>
         {/* <Table /> */}
