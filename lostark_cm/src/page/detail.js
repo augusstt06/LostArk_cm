@@ -11,6 +11,7 @@ function Detail() {
   const userId = location.state.id.userId;
 
   const [info, setInfo] = useState();
+  const [raid, setRaid] = useState("");
 
   const getCharacter_Profile = async () => {
     try {
@@ -35,11 +36,14 @@ function Detail() {
     }
   };
 
+  const selectRaid = (e) => {
+    setRaid(e.target.name);
+    console.log(raid, "??");
+  };
   useEffect(() => {
     getCharacter_Profile();
     getCharacter_Armor();
   }, [userId]);
-  console.log(info);
 
   return (
     <div className={styles.detail}>
@@ -48,44 +52,73 @@ function Detail() {
         <Input />
       </div>
       <div className={styles.detailBody}>
-        <div
-          className="btn-group"
-          role="group"
-          aria-label="Basic outlined example"
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Valtan_N"
+          onClick={selectRaid}
         >
-          <button type="button" className="btn btn-outline-primary">
-            발탄
-          </button>
-          <button type="button" className="btn btn-outline-primary">
-            비아키스
-          </button>
-          <button type="button" className="btn btn-outline-primary">
-            쿠크세이튼
-          </button>
-          <button type="button" className="btn btn-outline-primary">
-            아브렐슈드
-          </button>
-        </div>
-        <div>
-          <div>
-            {info &&
-              info.map((data) =>
-                data["Type"] === "무기" ||
-                data["Type"] === "투구" ||
-                data["Type"] === "상의" ||
-                data["Type"] === "하의" ||
-                data["Type"] === "장갑" ||
-                data["Type"] === "견갑" ? (
-                  <div>
-                    <img src={data["Icon"]} alt={data["Name"]} />
-                    {data["Name"]}
-                  </div>
-                ) : null
-              )}
-          </div>
-        </div>
-        {/* <Table /> */}
+          발탄
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Valtan_H"
+          onClick={selectRaid}
+        >
+          발탄(H)
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Vykas_N"
+        >
+          비아키스
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Vykas_H"
+        >
+          비아키스(H)
+        </button>
+        <button type="button" className="btn btn-outline-primary" name="Kuku">
+          쿠크세이튼
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Abrel_N"
+        >
+          아브렐슈드
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          name="Abrel_H"
+        >
+          아브렐슈드
+        </button>
       </div>
+      <div>
+        <div>
+          {info &&
+            info.map((data) =>
+              data["Type"] === "무기" ||
+              data["Type"] === "투구" ||
+              data["Type"] === "상의" ||
+              data["Type"] === "하의" ||
+              data["Type"] === "장갑" ||
+              data["Type"] === "견갑" ? (
+                <div key={data["Name"]}>
+                  <img src={data["Icon"]} alt={data["Name"]} />
+                  {data["Name"]}
+                </div>
+              ) : null
+            )}
+        </div>
+      </div>
+      {/* <Table /> */}
     </div>
   );
 }
