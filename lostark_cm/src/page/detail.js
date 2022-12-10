@@ -45,6 +45,7 @@ function Detail() {
     getCharacter_Armor();
   }, [userId]);
   console.log(raid);
+
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
@@ -52,28 +53,45 @@ function Detail() {
         <Input />
       </div>
       <div className={styles.detailBody}>
-        <RaidBtn data={selectRaid} />
-      </div>
-      <div>
-        <div>
-          {info &&
-            info.map((data) =>
-              data["Type"] === "무기" ||
-              data["Type"] === "투구" ||
-              data["Type"] === "상의" ||
-              data["Type"] === "하의" ||
-              data["Type"] === "장갑" ||
-              data["Type"] === "견갑" ? (
-                <div key={data["Name"]}>
-                  <img src={data["Icon"]} alt={data["Name"]} />
-                  {data["Name"]}
-                </div>
-              ) : null
-            )}
+        <div className={styles.raidBtn}>
+          <RaidBtn data={selectRaid} />
         </div>
-        <div>여기가 대조군</div>
+        <div className={styles.spec}>
+          <div className={styles.user}>
+            {info &&
+              info.map((data) =>
+                data["Type"] === "무기" ||
+                data["Type"] === "투구" ||
+                data["Type"] === "상의" ||
+                data["Type"] === "하의" ||
+                data["Type"] === "장갑" ||
+                data["Type"] === "견갑" ? (
+                  <div key={data["Name"]}>
+                    <img src={data["Icon"]} alt={data["Name"]} />
+                    {data["Name"]}
+                  </div>
+                ) : null
+              )}
+          </div>
+          <div className={styles.control_group}>
+            {info &&
+              info.map((data) =>
+                data["Type"] === "무기" ||
+                data["Type"] === "투구" ||
+                data["Type"] === "상의" ||
+                data["Type"] === "하의" ||
+                data["Type"] === "장갑" ||
+                data["Type"] === "견갑" ? (
+                  <div key={data["Name"]}>
+                    <img src={data["Icon"]} alt={data["Name"]} />
+                    {data["Name"]}
+                  </div>
+                ) : null
+              )}
+          </div>
+        </div>
+        {/* <Table /> */}
       </div>
-      {/* <Table /> */}
     </div>
   );
 }

@@ -13,5 +13,22 @@
   text-align: center;
 }
 .detailBody {
-  background-color: rgb(19, 9, 63);
+  /* background-color: rgb(19, 9, 63); */
+}
+.raidBtn {
+  /* background-color: bisque; */
+  padding: 10px 0;
+  text-align: center;
+}
+.spec {
+  /* background-color: blueviolet; */
+  display: flex;
+  color: #fff;
+  justify-content: space-around;
+}
+.user {
+  /* background-color: antiquewhite; */
+}
+.control_group {
+  /* background-color: azure; */
 }
