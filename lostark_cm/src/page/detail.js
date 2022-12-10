@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Header from "../component/header";
 import Input from "../component/input";
+import Table from "../component/table";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
-import axios from "axios";
 import { customAxios } from "../api/customAxios";
 
 function Detail() {
@@ -32,7 +32,23 @@ function Detail() {
         <Header />
         <Input />
       </div>
-      <div className={styles.detailBody}>ㅇ</div>
+      <div className={styles.detailBody}>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary">
+            발탄
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            비아키스
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            쿠크세이튼
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            아브렐슈드
+          </button>
+        </div>
+        {/* <Table /> */}
+      </div>
     </div>
   );
 }
