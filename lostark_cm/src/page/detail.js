@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../component/header";
 import Input from "../component/input";
 import Table from "../component/table";
+import RaidBtn from "../component/raidBtn";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
 import { customAxios } from "../api/customAxios";
@@ -38,13 +39,12 @@ function Detail() {
 
   const selectRaid = (e) => {
     setRaid(e.target.name);
-    console.log(raid, "??");
   };
   useEffect(() => {
     getCharacter_Profile();
     getCharacter_Armor();
   }, [userId]);
-
+  console.log(raid);
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
@@ -52,53 +52,7 @@ function Detail() {
         <Input />
       </div>
       <div className={styles.detailBody}>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Valtan_N"
-          onClick={selectRaid}
-        >
-          발탄
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Valtan_H"
-          onClick={selectRaid}
-        >
-          발탄(H)
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Vykas_N"
-        >
-          비아키스
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Vykas_H"
-        >
-          비아키스(H)
-        </button>
-        <button type="button" className="btn btn-outline-primary" name="Kuku">
-          쿠크세이튼
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Abrel_N"
-        >
-          아브렐슈드
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          name="Abrel_H"
-        >
-          아브렐슈드
-        </button>
+        <RaidBtn data={selectRaid} />
       </div>
       <div>
         <div>
@@ -117,6 +71,7 @@ function Detail() {
               ) : null
             )}
         </div>
+        <div>여기가 대조군</div>
       </div>
       {/* <Table /> */}
     </div>
