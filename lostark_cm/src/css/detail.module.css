@@ -24,17 +24,13 @@
   /* background-color: blueviolet; */
   display: flex;
   color: #fff;
+
   justify-content: space-evenly;
 }
 .user {
   /* background-color: antiquewhite; */
 }
-.user_armor p {
-  /* background-color: aliceblue; */
-  display: inline-block;
-  font-size: 0.8rem;
-  padding-top: 10px;
-}
+
 .user_armor img {
   width: 55px;
   height: 55px;
@@ -58,6 +54,16 @@
   height: 10%;
   align-items: center;
 }
+.armor_relics {
+  color: rgb(214, 114, 32);
+}
+.armor_ancient {
+  color: rgb(175, 159, 127);
+}
+.armor_legend {
+  color: rgb(210, 189, 33);
+}
 .control_group {
   /* background-color: azure; */
+  /* color: rgb(229, 146, 146); */
 }

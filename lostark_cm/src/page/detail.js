@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../component/header";
 import Input from "../component/input";
-import Table from "../component/table";
 import RaidBtn from "../component/raidBtn";
+import StatBtn from "../component/statBtn";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
 import {
@@ -56,26 +56,38 @@ function Detail() {
                       <img src={data["Icon"]} alt={data["Name"]} />
                       <div className={styles.armor_tooltip}>
                         <div>{data["Type"]}</div>
-                        <div>{data["Name"]}</div>
+                        {data["Grade"] === "유물" ? (
+                          <div className={styles.armor_relics}>
+                            {data["Name"]}
+                          </div>
+                        ) : data["Grade"] === "고대" ? (
+                          <div className={styles.armor_ancient}>
+                            {data["Name"]}
+                          </div>
+                        ) : (
+                          <div className={styles.armor_legend}>
+                            {data["Name"]}
+                          </div>
+                        )}
                       </div>
                     </div>
                   ) : null
                 )}
             </div>
-            <p>각인 효과</p>
+            <StatBtn />
+
             {engrave &&
               engrave.map((data) => (
-                <>
+                <div key={data["Name"]}>
                   <div>{data["Name"]}</div>
-                </>
+                </div>
               ))}
           </div>
           <div className={styles.control_group}>
-            <div>각인 효과</div>
+            <div>레이드 기준</div>
           </div>
           <div>여기는 경매장 가격</div>
         </div>
-        {/* <Table /> */}
       </div>
     </div>
   );

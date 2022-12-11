@@ -8,6 +8,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Valtan_N"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         발탄
       </button>
@@ -16,6 +17,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Valtan_H"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         발탄(H)
       </button>
@@ -24,6 +26,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Vykas_N"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         비아키스
       </button>
@@ -32,6 +35,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Vykas_H"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         비아키스(H)
       </button>
@@ -40,6 +44,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Kuku"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         쿠크세이튼
       </button>
@@ -48,6 +53,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Abrel_N"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         아브렐슈드
       </button>
@@ -56,6 +62,7 @@ function RaidBtn(props) {
         className="btn btn-outline-primary"
         name="Abrel_H"
         onClick={props.data}
+        style={{ border: "1px solid black", color: "#fff" }}
       >
         아브렐슈드
       </button>
