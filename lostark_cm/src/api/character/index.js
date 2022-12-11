@@ -11,23 +11,23 @@ export const getCharacter_Profile = async (userId) => {
   }
 };
 
-export const getCharacter_Armor = async (userId, setInfo) => {
+export const getCharacter_Armor = async (userId, setArmor) => {
   try {
     const res = await customAxios.get(
       `/armories/characters/${userId}/equipment`
     );
     console.log(res.data);
-    setInfo(res.data);
+    setArmor(res.data);
   } catch (err) {
     console.log(err);
   }
 };
 
-export const getCharacter_Engrave = async (userId) => {
+export const getCharacter_Engrave = async (userId, setEngrave) => {
   try {
     const res = await customAxios.get(`/armories/characters/${userId}/engravings
         `);
-    console.log(res.data["Effects"]);
+    setEngrave(res.data["Effects"]);
   } catch (err) {
     console.log(err);
   }
