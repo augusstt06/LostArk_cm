@@ -29,6 +29,35 @@
 .user {
   /* background-color: antiquewhite; */
 }
+.user_armor p {
+  /* background-color: aliceblue; */
+  display: inline-block;
+  font-size: 0.8rem;
+  padding-top: 10px;
+}
+.user_armor img {
+  width: 55px;
+  height: 55px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+.user_armor div {
+  display: flex;
+  margin: 5px 0;
+}
+.armor_tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 55px;
+}
+.armor_tooltip div {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  padding-top: 10px;
+  height: 10%;
+  align-items: center;
+}
 .control_group {
   /* background-color: azure; */
 }
