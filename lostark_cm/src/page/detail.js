@@ -5,7 +5,11 @@ import Table from "../component/table";
 import RaidBtn from "../component/raidBtn";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
-import { customAxios } from "../api/customAxios";
+import {
+  getCharacter_Profile,
+  getCharacter_Armor,
+  getCharacter_Engrave,
+} from "../api/character/index";
 
 function Detail() {
   let location = useLocation();
@@ -14,35 +18,13 @@ function Detail() {
   const [info, setInfo] = useState();
   const [raid, setRaid] = useState("");
 
-  const getCharacter_Profile = async () => {
-    try {
-      const res = await customAxios.get(
-        encodeURI(`/armories/characters/${userId}/profiles`)
-      );
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getCharacter_Armor = async () => {
-    try {
-      const res = await customAxios.get(
-        encodeURI(`/armories/characters/${userId}/equipment`)
-      );
-      console.log(res.data);
-      setInfo(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const selectRaid = (e) => {
     setRaid(e.target.name);
   };
   useEffect(() => {
-    getCharacter_Profile();
-    getCharacter_Armor();
+    getCharacter_Profile(userId);
+    getCharacter_Armor(userId, setInfo);
+    getCharacter_Engrave(userId);
   }, [userId]);
   console.log(raid);
 
@@ -89,6 +71,7 @@ function Detail() {
                 ) : null
               )}
           </div>
+          <div>여기는 경매장 가격</div>
         </div>
         {/* <Table /> */}
       </div>
