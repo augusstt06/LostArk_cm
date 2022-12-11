@@ -24,7 +24,7 @@
   /* background-color: blueviolet; */
   display: flex;
   color: #fff;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .user {
   /* background-color: antiquewhite; */
