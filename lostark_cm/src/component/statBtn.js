@@ -1,29 +1,32 @@
 import React from "react";
 
-function StatBtn() {
+function StatBtn(props) {
   return (
     <div>
       <button
         type="button"
         className="btn btn-outline-primary"
-        name="Valtan_N"
+        name="Engrave"
         style={{ border: "1px solid black", color: "#fff" }}
+        onClick={props.data}
       >
         각인
       </button>
       <button
         type="button"
         className="btn btn-outline-primary"
-        name="Valtan_H"
+        name="Jem"
         style={{ border: "1px solid black", color: "#fff" }}
+        onClick={props.data}
       >
         보석
       </button>
       <button
         type="button"
         className="btn btn-outline-primary"
-        name="Vykas_N"
+        name="Card"
         style={{ border: "1px solid black", color: "#fff" }}
+        onClick={props.data}
       >
         카드
       </button>
