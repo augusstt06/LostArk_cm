@@ -28,6 +28,7 @@ function Detail() {
   const selectStat = (e) => {
     setStat(e.target.name);
   };
+
   useEffect(() => {
     getCharacter_Profile(userId);
     getCharacter_Armor(userId, setArmor);
