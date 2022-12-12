@@ -34,9 +34,6 @@ function Detail() {
     getCharacter_Engrave(userId, setEngrave);
   }, [userId]);
 
-  // console.log(engrave);
-  // console.log(armor);
-  // console.log(stat);
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
