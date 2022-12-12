@@ -11,6 +11,7 @@ import {
   getCharacter_Profile,
   getCharacter_Armor,
   getCharacter_Engrave,
+  getCharacter_Gem,
 } from "../api/character/index";
 
 function Detail() {
@@ -21,6 +22,7 @@ function Detail() {
   const [engrave, setEngrave] = useState();
   const [raid, setRaid] = useState("");
   const [stat, setStat] = useState("");
+  const [gem, setGem] = useState("");
 
   const selectRaid = (e) => {
     setRaid(e.target.name);
@@ -33,8 +35,9 @@ function Detail() {
     getCharacter_Profile(userId);
     getCharacter_Armor(userId, setArmor);
     getCharacter_Engrave(userId, setEngrave);
+    getCharacter_Gem(userId, setGem);
   }, [userId]);
-
+  console.log(gem);
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
