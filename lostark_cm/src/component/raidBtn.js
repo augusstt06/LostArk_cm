@@ -64,7 +64,7 @@ function RaidBtn(props) {
         onClick={props.data}
         style={{ border: "1px solid black", color: "#fff" }}
       >
-        아브렐슈드
+        아브렐슈드(H)
       </button>
     </div>
   );
