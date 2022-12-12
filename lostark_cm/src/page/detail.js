@@ -20,9 +20,10 @@ function Detail() {
 
   const [armor, setArmor] = useState();
   const [engrave, setEngrave] = useState();
+  const [gem, setGem] = useState();
+
   const [raid, setRaid] = useState("");
   const [stat, setStat] = useState("");
-  const [gem, setGem] = useState("");
 
   const selectRaid = (e) => {
     setRaid(e.target.name);
