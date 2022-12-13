@@ -35,8 +35,8 @@ export const getCharacter_Engrave = async (userId, setEngrave) => {
 
 export const getCharacter_Gem = async (userId, setGem) => {
   try {
-    const res = await customAxios.get(`/armories/characters/${userId}/gems'`);
-    setGem(res.data);
+    const res = await customAxios.get(`/armories/characters/${userId}/gems`);
+    setGem(res.data["Gems"]);
   } catch (err) {
     console.log(err);
   }
