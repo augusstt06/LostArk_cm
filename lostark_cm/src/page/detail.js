@@ -38,7 +38,7 @@ function Detail() {
     getCharacter_Engrave(userId, setEngrave);
     getCharacter_Gem(userId, setGem);
   }, [userId]);
-  console.log(gem);
+  console.log(stat);
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
@@ -54,7 +54,13 @@ function Detail() {
             <p>장비</p>
             <UserArmor data={armor} />
             <StatBtn data={selectStat} />
-            <StatEngrave data={engrave} />
+            {stat === "Engrave" ? (
+              <StatEngrave data={engrave} />
+            ) : stat === "Gem" ? (
+              <StatEngrave data={gem} />
+            ) : (
+              <StatEngrave data={engrave} />
+            )}
           </div>
           <div className={styles.control_group}>
             <div>레이드 기준</div>
