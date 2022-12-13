@@ -15,7 +15,7 @@ function StatBtn(props) {
       <button
         type="button"
         className="btn btn-outline-primary"
-        name="Jem"
+        name="Gem"
         style={{ border: "1px solid black", color: "#fff" }}
         onClick={props.data}
       >
