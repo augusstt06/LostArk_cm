@@ -38,7 +38,7 @@ function Detail() {
     getCharacter_Engrave(userId, setEngrave);
     getCharacter_Gem(userId, setGem);
   }, [userId]);
-  console.log(stat);
+
   return (
     <div className={styles.detail}>
       <div className={styles.detailHeader}>
@@ -65,7 +65,7 @@ function Detail() {
           <div className={styles.control_group}>
             <div>레이드 기준</div>
           </div>
-          <div>여기는 경매장 가격</div>
+          <div>경매장 가격</div>
         </div>
       </div>
     </div>
