@@ -1,7 +1,7 @@
 import React from "react";
 
 function StatEngrave(props) {
-  console.log(props);
+  console.log(props, "각인");
 
   return (
     <div>
