@@ -4,6 +4,8 @@ import Input from "../component/input";
 import RaidBtn from "../component/raidBtn";
 import StatBtn from "../component/statBtn";
 import StatEngrave from "../component/stat_engrave";
+import StatGem from "../component/stat_Gem";
+import StatCard from "../component/stat_Card";
 import UserArmor from "../component/userArmor";
 import styles from "../css/detail.module.css";
 import { useLocation } from "react-router";
@@ -57,9 +59,9 @@ function Detail() {
             {stat === "Engrave" ? (
               <StatEngrave data={engrave} />
             ) : stat === "Gem" ? (
-              <StatEngrave data={gem} />
+              <StatGem data={gem} />
             ) : (
-              <StatEngrave data={engrave} />
+              <StatCard data={engrave} />
             )}
           </div>
           <div className={styles.control_group}>
